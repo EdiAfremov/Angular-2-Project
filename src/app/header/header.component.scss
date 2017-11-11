@@ -1,0 +1,114 @@
+a:hover,
+a:active,
+a:visited,
+a:link {
+    text-decoration: none;
+}
+
+button:active,
+button:visited {
+    border: none;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+$bg-color: #5584ff;
+$icons-color: #0e1a35;
+$font-roboto: 'Roboto',
+sans-serif;
+.flex-navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #d4d9e3;
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    min-height: 70px;
+    @media (max-width: 1000px) {
+        min-height: 140px;
+    }
+    box-sizing: border-box;
+    ul {
+        margin: 0;
+        list-style: none;
+        display: flex;
+        li {
+            margin: 0 30px;
+        }
+    }
+    .nav-right,
+    .nav-left {
+        flex-basis: 280px;
+        align-items: center;
+        .caret-left {
+            display: inline-block;
+            margin-left: 2px;
+            vertical-align: middle;
+            border-bottom: 4px solid transparent;
+            border-top: 4px solid transparent;
+            border-right: 4px solid;
+            margin-top: -7px;
+            color: $icons-color;
+        }
+        .glyphicon {
+            color: $icons-color;
+            font-size: 24px;
+            position: relative;
+            top: 5px;
+        }
+        .add-project-btn {
+            font: {
+                family: $font-roboto;
+                weight: 300;
+            }
+            background: $bg-color;
+            border: none;
+            width: 130px;
+            height: 35px;
+            color: white;
+            font-size: 14px;
+            padding: 4px;
+            border-radius: 25px;
+            .plus-add-project {
+                margin-right: 2px;
+                font-size: 16px;
+                color: #aac2ff;
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+        .badge {
+            position: absolute;
+            top: -30%;
+            left: 50%;
+            font-size: 15px;
+            color: white;
+            background: $bg-color;
+            @include border-radius(50%);
+            border: 1px solid white;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            padding: 0;
+        }
+        .nav-link-profile-img {
+            min-width: 82px;
+            height: 57px;
+        }
+        .img-profile {
+            height: 57px;
+            width: 57px;
+            @include border-radius(50%);
+        }
+        .caret {
+            color: $icons-color;
+        }
+    }
+}

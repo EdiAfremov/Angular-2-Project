@@ -1,0 +1,18 @@
+<ul class="flex-card">
+    <li class="card-header">
+        <p class="card-header-name"> Messages</p>
+        <div class="badges">
+            <span class="card-badge-empty"></span>
+            <span class="card-badge card-badge-two">{{notification}}</span>
+        </div>
+    </li>
+    <li class="card-line" *ngFor="let message of messages" [ngClass]="{'readed-bg': message.readed == true}">
+        <span class="card-badge-messages "><img src="{{message.img}}" alt="{{message.img}}" class="profile-img-messages card-badge-messages"></span>
+        <span class="message-text">
+      <p class="message-name"> {{message.name}} <span class="message-time">{{message.time}} ago</span></p>
+        <p class="message-body">{{message.messageBody}}</p>
+        <span class="glyphicon glyphicon-share-alt icon-flipped"></span>
+        <span class="glyphicon glyphicon-cog"></span>
+        </span>
+    </li>
+</ul>

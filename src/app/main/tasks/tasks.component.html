@@ -1,0 +1,20 @@
+<ul class="flex-card">
+    <li class="card-header">
+        <p class="card-header-name">Tasks</p>
+        <div class="badges">
+            <span class="card-badge">{{notifications.blueNotification}}</span>
+            <span class="card-badge-two">{{notifications.redNotification}}</span>
+        </div>
+    </li>
+    <li class="card-line" *ngFor="let task of tasks">
+        <span class="card-badge-tasks">{{task.profile}}</span>
+        <span class="task-text">
+          <p class="first-line">{{task.title}}</p> 
+          <p class="days days-delay" *ngIf="task.delay == true; else red"> <span class="glyphicon glyphicon-time days-delay"></span>{{task.delayInDayes}} days delays</p>
+        <ng-template #red>
+            <p class="days"> <span class="glyphicon glyphicon-time"></span>{{task.delayInDayes}} days left</p>
+        </ng-template>
+        </span>
+        <span class="glyphicon glyphicon-option-vertical"></span>
+    </li>
+</ul>

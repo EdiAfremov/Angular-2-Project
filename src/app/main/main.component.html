@@ -1,0 +1,28 @@
+<app-header (closeSideBarClick)="toggleMenu()"></app-header>
+<!-- <app-side-bar  ></app-side-bar> -->
+<nav class="side-bar-container" [@Toggle]="state">
+    <ul class="side-bar">
+        <app-nav-item></app-nav-item>
+    </ul>
+</nav>
+<div class="flex-container" [@containerState]="containerState">
+
+    <div class="charts-header">
+        <h1 class="user-name">Hello {{user}}! </h1>
+    </div>
+    <div class="charts-flex">
+        <div class="box sales"></div>
+        <div class="box report"></div>
+    </div>
+    <div class="lists-flex">
+        <div class="box tasks">
+            <app-tasks></app-tasks>
+        </div>
+        <div class="box messages">
+            <app-messages></app-messages>
+        </div>
+        <div class="box activities ">
+            <app-activity></app-activity>
+        </div>
+    </div>
+</div>
